@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8D Audio Converter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>8D Audio Converter</h1>
+        <p>Upload a song to convert it into a captivating 8D audio experience. Remember to use headphones for the best effect!</p>
+        
+        <form action="/convert" method="post" enctype="multipart/form-data">
+            {% if error %}
+                <p class="error">{{ error }}</p>
+            {% endif %}
+
+            <div class="file-input-wrapper">
+                <input type="file" name="audio_file" id="audio_file" required>
+                <label for="audio_file" class="file-input-label">Drag & Drop or Click to Upload</label>
+                <div class="file-name" id="file-name">No file selected</div>
+            </div>
+
+            <button type="submit" class="upload-button">Convert to 8D</button>
+        </form>
+
+        {% if processed_file %}
+            <div class="result">
+                <h2>Conversion Complete!</h2>
+                <p>Enjoy your new 8D audio. Put on your headphones!</p>
+                <a href="{{ url_for('download', filename=processed_file) }}">Download 8D Audio</a>
+            </div>
+        {% endif %}
+    </div>
+
+    <script>
+        document.getElementById('audio_file').addEventListener('change', function(e) {
+            var fileName = e.target.files[0] ? e.target.files[0].name : 'No file selected';
+            document.getElementById('file-name').textContent = fileName;
+        });
+    </script>
+</body>
+</html>
