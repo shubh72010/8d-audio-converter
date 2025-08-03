@@ -1,0 +1,121 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    text-align: center;
+}
+
+.container {
+    background-color: #fff;
+    padding: 40px 50px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+}
+
+h1 {
+    color: #1a73e8;
+    margin-bottom: 20px;
+}
+
+p {
+    margin-bottom: 30px;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+.file-input-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    cursor: pointer;
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    transition: border-color 0.3s;
+}
+
+.file-input-wrapper:hover {
+    border-color: #1a73e8;
+}
+
+.file-input-wrapper input[type="file"] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.file-input-label {
+    display: block;
+    color: #777;
+    font-size: 1.1em;
+}
+
+.file-input-wrapper input[type="file"]:focus + .file-input-label,
+.file-input-wrapper:hover .file-input-label {
+    color: #1a73e8;
+}
+
+.file-name {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #555;
+    word-break: break-all;
+}
+
+.upload-button {
+    background-color: #1a73e8;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    margin-top: 20px;
+}
+
+.upload-button:hover {
+    background-color: #1565c0;
+}
+
+.upload-button:active {
+    transform: scale(0.98);
+}
+
+.result {
+    margin-top: 30px;
+}
+
+.result h2 {
+    color: #4CAF50;
+}
+
+.result a {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.result a:hover {
+    background-color: #45a049;
+}
+
+.error {
+    color: #D32F2F;
+    margin-top: 20px;
+    font-weight: bold;
+}
